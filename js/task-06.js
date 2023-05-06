@@ -1,17 +1,16 @@
 const inputRef = document.querySelector('#validation-input')
-
-
+const inputValidLength = Number(inputRef.dataset.length);
 
 inputRef.addEventListener('blur', onInputValidation);
 
 function onInputValidation(evt) {
 	const inputLength = evt.currentTarget.value.length;
-	const inputInitialValue = 6;
 
-	if (inputLength < inputInitialValue) {
-		inputRef.classList.add('invalid'); 
-	} else {
+	if (inputLength === inputValidLength) {
 		inputRef.classList.remove('invalid');
-		inputRef.classList.add('valid');
+		inputRef.classList.add('valid'); 
+	} else {
+		inputRef.classList.remove('valid');
+		inputRef.classList.add('invalid');
 	}
 }

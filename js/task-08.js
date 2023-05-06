@@ -15,7 +15,7 @@ function onLogin(evt) {
 		userData.password = password.value;
 		
 		console.log(userData);
-	}
 
-	formRef.reset();
+		formRef.reset();
+	}
 }
